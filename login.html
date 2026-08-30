@@ -404,7 +404,7 @@
          */
 
         const API_URL =
-            "http://localhost:5000";
+            "https://forthem-backend.vercel.app";
 
 
         /*
@@ -623,7 +623,7 @@
 
                     const response =
                         await fetch(
-                            `${API_URL}/login`,
+                            `${API_URL}/api/login`,
                             {
 
                                 method: "POST",
@@ -718,6 +718,11 @@
 
                     localStorage.setItem(
                         "forthem_logged_in",
+                        "true"
+                    );
+
+                    localStorage.setItem(
+                        "isLoggedIn",
                         "true"
                     );
 
