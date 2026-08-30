@@ -1,7 +1,7 @@
 const API_URL =
     window.location.hostname === "localhost"
-        ? "http://localhost:5000/api"
-        : "/api";
+        ? "http://localhost:5000/api/chat"
+        : "/api/chat";
 
 async function sendChatMessage(userMessage) {
 
@@ -10,7 +10,7 @@ async function sendChatMessage(userMessage) {
 
     try {
 
-        const response = await fetch(`${API_URL}/chat`, {
+        const response = await fetch(API_URL, {
             method: "POST",
 
             headers: {
