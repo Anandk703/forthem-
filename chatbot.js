@@ -1,4 +1,4 @@
-const API_URL = "https://forthem-backend-pcx21twgq-anandk703s-projects.vercel.app";
+const API_URL = "https://forthem-backend.vercel.app";
 
 async function sendChatMessage(userMessage) {
     const userName =
@@ -7,11 +7,9 @@ async function sendChatMessage(userMessage) {
     try {
         const response = await fetch(`${API_URL}/api/chat`, {
             method: "POST",
-
             headers: {
                 "Content-Type": "application/json"
             },
-
             body: JSON.stringify({
                 message: userMessage,
                 userName: userName
@@ -24,13 +22,10 @@ async function sendChatMessage(userMessage) {
             throw new Error(data.message || "Chat request failed");
         }
 
-        console.log("Bot:", data.reply);
-
         return data.reply;
 
     } catch (error) {
         console.error("❌ Chatbot error:", error);
-
         return "Sorry, I'm unable to connect right now.";
     }
 }
