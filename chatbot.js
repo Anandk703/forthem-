@@ -1,8 +1,4 @@
-const API_URL =
-    window.location.hostname === "localhost"
-        ? "http://localhost:5000/api/chat"
-        : "/api/chat";
-
+const API_URL = "https://forthem-backend.vercel.app";
 async function sendChatMessage(userMessage) {
 
     const userName =
