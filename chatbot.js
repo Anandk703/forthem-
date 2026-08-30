@@ -1,4 +1,7 @@
-const API_URL = "YOUR_DEPLOYED_BACKEND_URL";
+const API_URL =
+    window.location.hostname === "localhost"
+        ? "http://localhost:5000"
+        : "/api";
 
 async function sendChatMessage(userMessage) {
 
