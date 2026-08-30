@@ -1,12 +1,11 @@
-const API_URL = "https://forthem-backend.vercel.app";
-async function sendChatMessage(userMessage) {
+const API_URL = "https://forthem-backend-pcx21twgq-anandk703s-projects.vercel.app";
 
+async function sendChatMessage(userMessage) {
     const userName =
         localStorage.getItem("userName") || "User";
 
     try {
-
-        const response = await fetch(API_URL, {
+        const response = await fetch(`${API_URL}/api/chat`, {
             method: "POST",
 
             headers: {
@@ -30,7 +29,6 @@ async function sendChatMessage(userMessage) {
         return data.reply;
 
     } catch (error) {
-
         console.error("❌ Chatbot error:", error);
 
         return "Sorry, I'm unable to connect right now.";
